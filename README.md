@@ -66,7 +66,6 @@ Below is an actual output of **LIPTunnel running live**:
 
 ![LIPTunnel Server PM2 Screenshot](./assets/server-pm2.png)
 
-*(Replace above image with your actual screenshot file path.)*
 
 This shows:
 
