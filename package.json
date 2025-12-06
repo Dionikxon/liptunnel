@@ -1,0 +1,16 @@
+{
+  "name": "liptunnel",
+  "version": "1.0.0",
+  "description": "LIPTunnel — Self-hosted HTTP tunneling solution to expose localhost securely using your own VPS and domain.",
+  "main": "bin/liptunnel.js",
+  "bin": {
+    "liptunnel": "bin/liptunnel.js"
+  },
+  "author": "Lasisi Ibrahim Pelumi — Full-Stack Engineer",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.0",
+    "uuid": "^9.0.0",
+    "ws": "^8.15.0"
+  }
+}
