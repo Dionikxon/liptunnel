@@ -1,3 +1,14 @@
+<div align="center">
+
+  <img src="./assets/liptunnel-banner.gif" alt="LIPTunnel Banner" />
+
+  <h1><b>LIPTunnel</b></h1>
+  <h3>Your Tunnel. Your Domain. Your Control.</h3>
+
+</div>
+
+
+
 # 🌐 LIPTunnel — Self-Hosted Ngrok Alternative
 
 LIPTunnel is a fast, lightweight, self-hosted tunneling system that exposes your local server to the internet using **your own VPS + domain**.
